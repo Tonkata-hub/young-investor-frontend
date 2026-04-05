@@ -28,17 +28,17 @@ export function Hero() {
 					икономиката.
 				</p>
 
-				<div className="mt-12 flex items-center justify-center gap-4">
+				<div className="mx-auto mt-12 flex w-full max-w-sm flex-col items-stretch gap-4 sm:max-w-none sm:flex-row sm:items-center sm:justify-center">
 					<Button
 						size="lg"
-						className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-8 hover:bg-[lab(9.53159%_.968002_3.74648)]/90"
+						className="w-full gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-8 hover:bg-[lab(9.53159%_.968002_3.74648)]/90 sm:w-auto"
 					>
 						Запиши се
 						<ArrowRight className="size-4" />
 					</Button>
 					<a
 						href="#overview"
-						className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-[lab(97.6889%_.426859_1.84673)] px-8 text-base font-medium text-foreground shadow-xs transition-colors hover:bg-[lab(94.5%_.426859_1.84673)]"
+						className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-[lab(97.6889%_.426859_1.84673)] px-8 text-base font-medium text-foreground shadow-xs transition-colors hover:bg-[lab(94.5%_.426859_1.84673)] sm:w-auto"
 					>
 						Научи повече
 						<ChevronDown className="size-4" />

@@ -26,7 +26,7 @@ const awards = [
 
 export function Highlight() {
 	return (
-		<section id="highlight" className="px-6 py-24 lg:px-8 lg:py-32">
+		<section id="highlight" className="bg-secondary px-6 py-24 lg:px-8 lg:py-32">
 			<div className="mx-auto max-w-7xl">
 				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
 					<div>

@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Overview } from "@/components/Overview";
 import { Highlight } from "@/components/Highlight";
-import { Benefits } from "@/components/Benefits";
+// import { Benefits } from "@/components/Benefits";
 import { Timeline } from "@/components/Timeline";
 import { Eligibility } from "@/components/Eligibility";
 import { Criteria } from "@/components/Criteria";
@@ -16,9 +16,12 @@ export default function Home() {
 			<Navbar />
 			<main>
 				<Hero />
+				<div className="mx-auto max-w-7xl px-6 lg:px-8">
+					<div className="h-px bg-foreground/20" />
+				</div>
 				<Overview />
 				<Highlight />
-				<Benefits />
+				{/* <Benefits /> */}
 				<Timeline />
 				<Eligibility />
 				<Criteria />
