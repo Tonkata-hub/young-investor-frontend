@@ -2,21 +2,18 @@ import { BookOpen, TrendingUp, Users, Target } from "lucide-react";
 
 const skills = [
 	{
-		number: "01",
 		icon: BookOpen,
 		title: "Финансова Грамотност",
 		description:
 			"Развийте основни знания за пазарите, инвестициите и финансовото планиране, които ще ви служат през целия живот.",
 	},
 	{
-		number: "02",
 		icon: TrendingUp,
 		title: "Инвестиционни Умения",
 		description:
 			"Научете се как да анализирате пазарите, да създавате диверсифицирани портфейли и да вземате информирани инвестиционни решения.",
 	},
 	{
-		number: "03",
 		icon: Users,
 		title: "Работа в Екип",
 		description:
@@ -54,10 +51,7 @@ export function Overview() {
 				<div className="mt-20 grid gap-12 lg:mt-24 lg:grid-cols-3 lg:gap-8">
 					{skills.map((skill) => (
 						<div key={skill.title}>
-							<div className="flex items-center gap-4">
-								<span className="font-serif text-sm text-muted-foreground">{skill.number}</span>
-								<div className="h-px flex-1 bg-border" />
-							</div>
+							<div className="h-px w-full bg-border" />
 							<div className="mt-6">
 								<div className="mb-4 flex size-12 items-center justify-center rounded-full bg-secondary">
 									<skill.icon className="size-5 text-foreground" />
@@ -69,25 +63,21 @@ export function Overview() {
 					))}
 				</div>
 
-				<div className="mt-12 lg:mt-16 overflow-hidden rounded-2xl border border-border bg-paper">
-					<div className="grid lg:grid-cols-[auto_1fr]">
-						<div className="flex items-center justify-center border-b border-border p-8 lg:border-b-0 lg:border-r lg:p-12">
-							<div className="flex size-16 items-center justify-center rounded-full bg-secondary">
-								<Target className="size-7 text-foreground" />
-							</div>
+				<div className="mt-12 lg:mt-16 rounded-2xl border border-border bg-paper p-8 lg:p-12">
+					<div className="flex items-center gap-4">
+						<div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary">
+							<Target className="size-5 text-foreground" />
 						</div>
-						<div className="p-8 lg:p-12">
-							<h3 className="font-serif text-2xl font-medium text-foreground lg:text-3xl">
-								Вашето Предизвикателство
-							</h3>
-							<p className="mt-4 leading-relaxed text-muted-foreground lg:text-lg">
-								В това състезание вие и вашите съотборници ще създадете инвестиционно портфолио за
-								хипотетична бизнес персона на име Иван Петров. Ще трябва да проучите и изберете
-								инвестиции, които са съобразени с целите, ценностите и толерантността към риска на Иван,
-								създавайки цялостен инвестиционен план.
-							</p>
-						</div>
+						<h3 className="font-serif text-2xl font-medium text-foreground lg:text-3xl">
+							Вашето Предизвикателство
+						</h3>
 					</div>
+					<p className="mt-6 leading-relaxed text-muted-foreground lg:text-lg">
+						В това състезание вие и вашите съотборници ще създадете инвестиционно портфолио за
+						хипотетична бизнес персона на име Иван Петров. Ще трябва да проучите и изберете
+						инвестиции, които са съобразени с целите, ценностите и толерантността към риска на Иван,
+						създавайки цялостен инвестиционен план.
+					</p>
 				</div>
 			</div>
 		</section>

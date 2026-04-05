@@ -49,14 +49,14 @@ export function Hero() {
 					<p className="text-center text-xs font-medium uppercase tracking-wider text-muted-foreground">
 						Партньори
 					</p>
-					<div className="mt-8 grid divide-y divide-border overflow-hidden rounded-2xl border border-border bg-[lab(97.6889%_.426859_1.84673)] md:grid-cols-3 md:divide-x md:divide-y-0">
+					<div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8 lg:gap-12">
 						{partners.map((partner) => (
-							<div key={partner.name} className="flex flex-col items-center gap-4 p-8 lg:p-10">
-								<div className="h-12 w-36 rounded-lg bg-secondary" />
+							<div key={partner.name} className="group flex flex-col items-center gap-3 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0">
+								<div className="h-10 w-28 rounded-lg bg-secondary" />
 								<div className="text-center">
 									<p className="text-sm font-medium text-foreground">{partner.name}</p>
 									{partner.role && (
-										<p className="mt-1 text-xs text-muted-foreground">{partner.role}</p>
+										<p className="mt-0.5 text-xs text-muted-foreground">{partner.role}</p>
 									)}
 								</div>
 							</div>
