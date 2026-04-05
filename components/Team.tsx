@@ -1,0 +1,88 @@
+import { AtSign } from "lucide-react";
+
+const organizers = [
+	{
+		name: "Клуб по Финанси СМГ",
+		initials: "КФ",
+		description:
+			"Клубът по финанси представлява група от ученици от Софийската математическа гимназия, които учат икономика и финанси чрез интерактивни срещи и семинари. Освен това те инвестират и търгуват с реални пари на финансовите пазари, ръководени от експерти в индустрията.",
+		social: { label: "@finance_club_smg", href: "https://instagram.com/finance_club_smg", icon: AtSign },
+	},
+	{
+		name: "Д-р Боян Иванчев",
+		initials: "БИ",
+		description:
+			'Д-р Боян Иванчев е основоположник на поведенческите финанси и невроикономиката в България, с над тридесет годишен опит във финансовата сфера като главен дилър и асет мениджър. Той е също лектор в университет по специалността "Поведенчески финанси" и автор на 3 книги и редица научни публикации.',
+		social: null,
+	},
+];
+
+const sponsors = [
+	{ name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
+	{ name: "Concord Asset Management", role: "Спонсор" },
+];
+
+export function Team() {
+	return (
+		<section id="organizers" className="px-6 py-24 lg:px-8 lg:py-32">
+			<div className="mx-auto max-w-7xl">
+				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
+					<div>
+						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+							Организатори
+						</p>
+						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
+							Организатори
+						</h2>
+					</div>
+					<div className="flex items-end">
+						<p className="text-lg leading-relaxed text-muted-foreground">
+							Инициативата &quot;Млад Инвеститор&quot; се организира от отдаден екип от финансови
+							професионалисти и ученици.
+						</p>
+					</div>
+				</div>
+
+				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
+					{organizers.map((person) => (
+						<div key={person.name} className="rounded-2xl border border-border bg-paper p-8 lg:p-10">
+							<div className="flex size-16 items-center justify-center rounded-full bg-secondary font-serif text-lg font-medium text-foreground">
+								{person.initials}
+							</div>
+							<h3 className="mt-6 text-xl font-medium text-foreground">{person.name}</h3>
+							<p className="mt-3 leading-relaxed text-muted-foreground">{person.description}</p>
+							{person.social && (
+								<a
+									href={person.social.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4 hover:no-underline"
+								>
+									<person.social.icon className="size-4" />
+									{person.social.label}
+								</a>
+							)}
+						</div>
+					))}
+				</div>
+
+				<div className="mt-6 border-t border-border pt-10">
+					<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
+						С Подкрепата На
+					</p>
+					<div className="mt-8 grid divide-y divide-border overflow-hidden rounded-2xl border border-border bg-paper md:grid-cols-2 md:divide-x md:divide-y-0">
+						{sponsors.map((sponsor) => (
+							<div key={sponsor.name} className="flex flex-col items-center gap-4 p-8 lg:p-10">
+								<div className="h-12 w-36 rounded-lg bg-secondary" />
+								<div className="text-center">
+									<p className="text-sm font-medium text-foreground">{sponsor.name}</p>
+									<p className="mt-1 text-xs text-muted-foreground">{sponsor.role}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
