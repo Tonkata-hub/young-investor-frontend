@@ -78,7 +78,7 @@ export function Eligibility() {
 							</p>
 							<div className="mt-6">
 								<Button size="lg" className="gap-2 rounded-full px-8">
-									Искам да участвам
+									Запиши се
 									<ArrowRight className="size-4" />
 								</Button>
 							</div>

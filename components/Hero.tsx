@@ -33,12 +33,12 @@ export function Hero() {
 						size="lg"
 						className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-8 hover:bg-[lab(9.53159%_.968002_3.74648)]/90"
 					>
-						Искам да участвам
+						Запиши се
 						<ArrowRight className="size-4" />
 					</Button>
 					<a
 						href="#overview"
-						className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-background px-8 text-base font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
+						className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-border bg-[lab(97.6889%_.426859_1.84673)] px-8 text-base font-medium text-foreground shadow-xs transition-colors hover:bg-[lab(94.5%_.426859_1.84673)]"
 					>
 						Научи повече
 						<ChevronDown className="size-4" />
@@ -49,7 +49,7 @@ export function Hero() {
 					<p className="text-center text-xs font-medium uppercase tracking-wider text-muted-foreground">
 						Партньори
 					</p>
-					<div className="mt-8 grid divide-y divide-border overflow-hidden rounded-2xl border border-border bg-paper md:grid-cols-3 md:divide-x md:divide-y-0">
+					<div className="mt-8 grid divide-y divide-border overflow-hidden rounded-2xl border border-border bg-[lab(97.6889%_.426859_1.84673)] md:grid-cols-3 md:divide-x md:divide-y-0">
 						{partners.map((partner) => (
 							<div key={partner.name} className="flex flex-col items-center gap-4 p-8 lg:p-10">
 								<div className="h-12 w-36 rounded-lg bg-secondary" />

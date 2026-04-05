@@ -20,26 +20,29 @@ export function Navbar() {
 
 	return (
 		<header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
-			<nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-				<Link href="/" className="font-serif text-xl font-medium tracking-tight text-foreground">
+			<nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
+				<Link
+					href="/"
+					className="shrink-0 whitespace-nowrap font-serif text-lg font-medium tracking-tight text-foreground"
+				>
 					Млад Инвеститор
 				</Link>
 
-				<div className="hidden items-center gap-10 md:flex">
+				<div className="hidden items-center gap-4 md:flex lg:gap-6">
 					{navLinks.map((link) => (
 						<Link
 							key={link.href}
 							href={link.href}
-							className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+							className="whitespace-nowrap text-xs text-muted-foreground transition-colors hover:text-foreground lg:text-sm"
 						>
 							{link.label}
 						</Link>
 					))}
 				</div>
 
-				<div className="hidden md:block">
-					<Button className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-6 hover:bg-[lab(9.53159%_.968002_3.74648)]/90">
-						Искам да участвам
+				<div className="hidden shrink-0 md:block">
+					<Button className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-4 text-sm hover:bg-[lab(9.53159%_.968002_3.74648)]/90 lg:px-6">
+						Запиши се
 						<ArrowRight className="size-4" />
 					</Button>
 				</div>
@@ -68,7 +71,7 @@ export function Navbar() {
 						))}
 						<div className="pt-6">
 							<Button className="w-full gap-2 rounded-full">
-								Искам да участвам
+								Запиши се
 								<ArrowRight className="size-4" />
 							</Button>
 						</div>

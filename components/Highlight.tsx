@@ -50,7 +50,7 @@ export function Highlight() {
 						<div
 							key={award.placement}
 							className={[
-								"rounded-2xl border border-border bg-paper",
+								"rounded-2xl border border-border bg-[lab(97.6889%_.426859_1.84673)]",
 								award.winner
 									? "px-8 pb-10 pt-20 lg:px-10 lg:pb-12 lg:pt-28"
 									: "px-8 pb-10 pt-12 lg:px-10 lg:pb-12 lg:pt-16",
