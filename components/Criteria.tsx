@@ -1,4 +1,7 @@
+"use client";
+
 import { LayoutList, TrendingUp, PieChart, Target } from "lucide-react";
+import { motion } from "framer-motion";
 
 const criteria = [
 	{
@@ -27,30 +30,50 @@ const criteria = [
 	},
 ];
 
+const container = {
+	hidden: {},
+	show: {
+		transition: {
+			staggerChildren: 0.12,
+		},
+	},
+};
+
+const fadeUp = {
+	hidden: { opacity: 0, y: 24 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
 export function Criteria() {
 	return (
 		<section id="criteria" className="px-6 py-24 lg:px-8 lg:py-32">
-			<div className="mx-auto max-w-7xl">
+			<motion.div
+				className="mx-auto max-w-7xl"
+				variants={container}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.15 }}
+			>
 				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
-					<div>
+					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Критерии за Оценяване
 						</p>
 						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
 							Критерии за Оценяване
 						</h2>
-					</div>
-					<div className="flex items-end">
+					</motion.div>
+					<motion.div className="flex items-end" variants={fadeUp}>
 						<p className="text-lg leading-relaxed text-muted-foreground">
 							Вашето инвестиционно портфолио и презентация ще бъдат оценявани на базата на следните
 							критерии.
 						</p>
-					</div>
+					</motion.div>
 				</div>
 
 				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
 					{criteria.map((item) => (
-						<div key={item.title} className="rounded-2xl border border-border bg-paper p-8 lg:p-10">
+						<motion.div key={item.title} className="rounded-2xl border border-border bg-paper p-8 lg:p-10" variants={fadeUp}>
 							<div className="flex items-center gap-4">
 								<span className="font-serif text-sm text-muted-foreground">{item.number}</span>
 								<div className="h-px flex-1 bg-border" />
@@ -62,10 +85,10 @@ export function Criteria() {
 								<h3 className="text-xl font-medium text-foreground">{item.title}</h3>
 								<p className="mt-3 leading-relaxed text-muted-foreground">{item.description}</p>
 							</div>
-						</div>
+						</motion.div>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 }

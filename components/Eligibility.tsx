@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const studentRequirements = [
 	"В момента учащи в 9–12 клас",
@@ -15,29 +18,49 @@ const teamFormation = [
 	"Всеки отбор трябва да има определен отборен лидер",
 ];
 
+const container = {
+	hidden: {},
+	show: {
+		transition: {
+			staggerChildren: 0.12,
+		},
+	},
+};
+
+const fadeUp = {
+	hidden: { opacity: 0, y: 24 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
 export function Eligibility() {
 	return (
 		<section id="eligibility" className="bg-secondary px-6 py-24 lg:px-8 lg:py-32">
-			<div className="mx-auto max-w-7xl">
+			<motion.div
+				className="mx-auto max-w-7xl"
+				variants={container}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.15 }}
+			>
 				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
-					<div>
+					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Кой Може да Участва
 						</p>
 						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
 							Кой Може да Участва
 						</h2>
-					</div>
-					<div className="flex items-end">
+					</motion.div>
+					<motion.div className="flex items-end" variants={fadeUp}>
 						<p className="text-lg leading-relaxed text-muted-foreground">
 							Инициативата &quot;Млад Инвеститор&quot; е отворена за ученици от цяла България с интерес
 							към финансите и инвестициите.
 						</p>
-					</div>
+					</motion.div>
 				</div>
 
 				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
-					<div className="rounded-2xl bg-paper p-8 lg:p-10">
+					<motion.div className="rounded-2xl bg-paper p-8 lg:p-10" variants={fadeUp}>
 						<h3 className="font-serif text-2xl font-medium text-foreground">Изисквания за Ученици</h3>
 						<ul className="mt-8">
 							{studentRequirements.map((item) => (
@@ -50,10 +73,10 @@ export function Eligibility() {
 								</li>
 							))}
 						</ul>
-					</div>
+					</motion.div>
 
 					<div className="flex flex-col gap-6">
-						<div className="rounded-2xl bg-paper p-8 lg:p-10">
+						<motion.div className="rounded-2xl bg-paper p-8 lg:p-10" variants={fadeUp}>
 							<h3 className="font-serif text-2xl font-medium text-foreground">Формиране на Отбор</h3>
 							<ul className="mt-8">
 								{teamFormation.map((item) => (
@@ -66,9 +89,9 @@ export function Eligibility() {
 									</li>
 								))}
 							</ul>
-						</div>
+						</motion.div>
 
-						<div className="rounded-2xl border border-border bg-paper p-8 lg:p-10">
+						<motion.div className="rounded-2xl border border-border bg-paper p-8 lg:p-10" variants={fadeUp}>
 							<h3 className="font-serif text-2xl font-medium text-foreground">
 								Готови ли сте за предизвикателството?
 							</h3>
@@ -82,10 +105,10 @@ export function Eligibility() {
 									<ArrowRight className="size-4" />
 								</Button>
 							</div>
-						</div>
+						</motion.div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 }

@@ -1,4 +1,7 @@
+"use client";
+
 import { BookOpen, TrendingUp, Users, Target } from "lucide-react";
+import { motion } from "framer-motion";
 
 const skills = [
 	{
@@ -21,12 +24,32 @@ const skills = [
 	},
 ];
 
+const container = {
+	hidden: {},
+	show: {
+		transition: {
+			staggerChildren: 0.12,
+		},
+	},
+};
+
+const fadeUp = {
+	hidden: { opacity: 0, y: 24 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
 export function Overview() {
 	return (
 		<section id="overview" className="px-6 py-24 lg:px-8 lg:py-32">
-			<div className="mx-auto max-w-7xl">
+			<motion.div
+				className="mx-auto max-w-7xl"
+				variants={container}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.15 }}
+			>
 				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
-					<div className="flex flex-col justify-center">
+					<motion.div className="flex flex-col justify-center" variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							За Състезанието
 						</p>
@@ -35,8 +58,8 @@ export function Overview() {
 							<br />
 							Състезанието
 						</h2>
-					</div>
-					<div className="flex flex-col justify-center">
+					</motion.div>
+					<motion.div className="flex flex-col justify-center" variants={fadeUp}>
 						<div className="h-px w-12 bg-foreground mb-8" />
 						<p className="text-lg leading-relaxed text-muted-foreground lg:text-xl">
 							Това предизвикателство цели да вдигне нивото на финансовата грамотност сред младежите в
@@ -45,12 +68,12 @@ export function Overview() {
 							същевременно да се потопят в сферата на финансите, капиталовите пазари, инвестициите и
 							икономиката.
 						</p>
-					</div>
+					</motion.div>
 				</div>
 
 				<div className="mt-20 grid gap-12 lg:mt-24 lg:grid-cols-3 lg:gap-8">
 					{skills.map((skill) => (
-						<div key={skill.title}>
+						<motion.div key={skill.title} variants={fadeUp}>
 							<div className="h-px w-full bg-border" />
 							<div className="mt-6">
 								<div className="mb-4 flex size-12 items-center justify-center rounded-full bg-secondary">
@@ -59,11 +82,14 @@ export function Overview() {
 								<h3 className="text-xl font-medium text-foreground">{skill.title}</h3>
 								<p className="mt-3 leading-relaxed text-muted-foreground">{skill.description}</p>
 							</div>
-						</div>
+						</motion.div>
 					))}
 				</div>
 
-				<div className="mt-12 lg:mt-16 rounded-2xl border border-border bg-paper p-8 lg:p-12">
+				<motion.div
+					className="mt-12 lg:mt-16 rounded-2xl border border-border bg-paper p-8 lg:p-12"
+					variants={fadeUp}
+				>
 					<div className="flex items-center gap-4">
 						<div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary">
 							<Target className="size-5 text-foreground" />
@@ -78,8 +104,8 @@ export function Overview() {
 						инвестиции, които са съобразени с целите, ценностите и толерантността към риска на Иван,
 						създавайки цялостен инвестиционен план.
 					</p>
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 		</section>
 	);
 }

@@ -1,4 +1,7 @@
+"use client";
+
 import { AtSign } from "lucide-react";
+import { motion } from "framer-motion";
 
 const organizers = [
 	{
@@ -22,30 +25,50 @@ const sponsors = [
 	{ name: "Concord Asset Management", role: "Спонсор" },
 ];
 
+const container = {
+	hidden: {},
+	show: {
+		transition: {
+			staggerChildren: 0.12,
+		},
+	},
+};
+
+const fadeUp = {
+	hidden: { opacity: 0, y: 24 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
+};
+
 export function Team() {
 	return (
 		<section id="organizers" className="px-6 py-24 lg:px-8 lg:py-32">
-			<div className="mx-auto max-w-7xl">
+			<motion.div
+				className="mx-auto max-w-7xl"
+				variants={container}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.15 }}
+			>
 				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
-					<div>
+					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Организатори
 						</p>
 						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
 							Организатори
 						</h2>
-					</div>
-					<div className="flex items-end">
+					</motion.div>
+					<motion.div className="flex items-end" variants={fadeUp}>
 						<p className="text-lg leading-relaxed text-muted-foreground">
 							Инициативата &quot;Млад Инвеститор&quot; се организира от отдаден екип от финансови
 							професионалисти и ученици.
 						</p>
-					</div>
+					</motion.div>
 				</div>
 
 				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
 					{organizers.map((person) => (
-						<div key={person.name} className="rounded-2xl border border-border bg-paper p-8 lg:p-10">
+						<motion.div key={person.name} className="rounded-2xl border border-border bg-paper p-8 lg:p-10" variants={fadeUp}>
 							<div className="flex size-16 items-center justify-center rounded-full bg-secondary font-serif text-lg font-medium text-foreground">
 								{person.initials}
 							</div>
@@ -62,11 +85,11 @@ export function Team() {
 									{person.social.label}
 								</a>
 							)}
-						</div>
+						</motion.div>
 					))}
 				</div>
 
-				<div className="mt-6 border-t border-border pt-10">
+				<motion.div className="mt-6 border-t border-border pt-10" variants={fadeUp}>
 					<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 						С Подкрепата На
 					</p>
@@ -81,8 +104,8 @@ export function Team() {
 							</div>
 						))}
 					</div>
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 		</section>
 	);
 }
