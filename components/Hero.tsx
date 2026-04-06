@@ -33,13 +33,29 @@ export function Hero() {
 				</motion.div>
 
 				<motion.h1
-					className="mx-auto mt-10 max-w-4xl text-balance text-center font-serif text-5xl font-medium tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+					className="mx-auto mt-10 max-w-4xl text-balance text-center font-serif text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
 					initial="hidden"
 					animate="show"
-					variants={fadeUp}
-					transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
+					variants={{
+						hidden: {},
+						show: {
+							transition: {
+								staggerChildren: 0.15,
+								delayChildren: 0.1,
+							},
+						},
+					}}
 				>
-					Млад Инвеститор
+					<motion.span variants={fadeUp} transition={{ duration: 0.55, ease: "easeOut" }} className="inline-block text-foreground">
+						Млад
+					</motion.span>{" "}
+					<motion.span
+						variants={fadeUp}
+						transition={{ duration: 0.55, ease: "easeOut" }}
+						className="inline-block text-foreground"
+					>
+						Инвеститор
+					</motion.span>
 				</motion.h1>
 
 				<motion.p
