@@ -85,7 +85,7 @@ export function Hero() {
 						<ArrowRight className="size-4" />
 					</Button>
 					<a
-						href="#overview"
+						href="/#overview"
 						className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-[lab(97.6889%_.426859_1.84673)] px-8 text-base font-medium text-foreground shadow-xs transition-colors hover:bg-[lab(94.5%_.426859_1.84673)] sm:w-auto"
 					>
 						Научи повече

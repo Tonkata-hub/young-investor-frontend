@@ -120,6 +120,11 @@
 }
 
 @layer base {
+	section[id] {
+		/* Offset hash-link jumps by the measured sticky navbar height. */
+		scroll-margin-top: var(--navbar-height, 0px);
+	}
+
 	* {
 		@apply border-border outline-ring/50;
 	}

@@ -7,19 +7,42 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-	{ href: "#overview", label: "За Нас" },
-	{ href: "#highlight", label: "Награди" },
-	{ href: "#timeline", label: "Програма" },
-	{ href: "#eligibility", label: "Участие" },
-	{ href: "#criteria", label: "Критерии" },
-	{ href: "#organizers", label: "Организатори" },
-	{ href: "#requirements", label: "Задача" },
+	{ href: "/#overview", label: "За Нас" },
+	{ href: "/#highlight", label: "Награди" },
+	{ href: "/#timeline", label: "Програма" },
+	{ href: "/#eligibility", label: "Участие" },
+	{ href: "/#criteria", label: "Критерии" },
+	{ href: "/#organizers", label: "Организатори" },
+	{ href: "/#requirements", label: "Задача" },
 ];
 
 export function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
 	const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
+	const headerRef = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		const header = headerRef.current;
+		if (!header) {
+			return;
+		}
+
+		const updateNavbarHeight = () => {
+			document.documentElement.style.setProperty("--navbar-height", `${header.offsetHeight}px`);
+		};
+
+		updateNavbarHeight();
+
+		const resizeObserver = new ResizeObserver(updateNavbarHeight);
+		resizeObserver.observe(header);
+		window.addEventListener("resize", updateNavbarHeight);
+
+		return () => {
+			resizeObserver.disconnect();
+			window.removeEventListener("resize", updateNavbarHeight);
+		};
+	}, []);
 
 	useEffect(() => {
 		if (mobileMenuOpen) {
@@ -64,7 +87,10 @@ export function Navbar() {
 
 	return (
 		<>
-			<header className="sticky top-0 z-60 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
+			<header
+				ref={headerRef}
+				className="sticky top-0 z-60 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80"
+			>
 				<nav className="relative z-20 mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
 					<Link
 						href="/"

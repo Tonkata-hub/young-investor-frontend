@@ -44,13 +44,13 @@ export function Benefits() {
 						<div key={benefit.title} className="group bg-foreground p-8 lg:p-10">
 							<h3 className="text-xl font-medium">{benefit.title}</h3>
 							<p className="mt-4 leading-relaxed text-background/70">{benefit.description}</p>
-							<a
-								href="#"
+							<button
+								type="button"
 								className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-background/60 transition-colors hover:text-background"
 							>
 								{benefit.link}
 								<ArrowUpRight className="size-4" />
-							</a>
+							</button>
 						</div>
 					))}
 				</div>
