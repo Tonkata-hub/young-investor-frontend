@@ -81,38 +81,40 @@ export function Eligibility() {
 						</ul>
 					</motion.div>
 
-					<div className="flex flex-col gap-6">
-						<motion.div className="rounded-2xl bg-paper p-8 lg:p-10" variants={fadeUp}>
-							<h3 className="font-serif text-2xl font-medium text-foreground">Формиране на Отбор</h3>
-							<ul className="mt-8">
-								{teamFormation.map((item) => (
-									<li
-										key={item}
-										className="flex items-start gap-4 border-t border-border py-4 first:border-0 first:pt-0"
-									>
-										<div className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground" />
-										<span className="text-muted-foreground">{item}</span>
-									</li>
-								))}
-							</ul>
-						</motion.div>
+					<motion.div className="rounded-2xl bg-paper p-8 lg:p-10" variants={fadeUp}>
+						<h3 className="font-serif text-2xl font-medium text-foreground">Формиране на Отбор</h3>
+						<ul className="mt-8">
+							{teamFormation.map((item) => (
+								<li
+									key={item}
+									className="flex items-start gap-4 border-t border-border py-4 first:border-0 first:pt-0"
+								>
+									<div className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground" />
+									<span className="text-muted-foreground">{item}</span>
+								</li>
+							))}
+						</ul>
+					</motion.div>
 
-						<motion.div className="rounded-2xl border border-border bg-paper p-8 lg:p-10" variants={fadeUp}>
-							<h3 className="font-serif text-2xl font-medium text-foreground">
-								Готови ли сте за предизвикателството?
-							</h3>
-							<p className="mt-3 leading-relaxed text-muted-foreground">
-								Присъединете се към инициативата &quot;Млад Инвеститор&quot; и започнете вашето пътуване
-								в света на финансите и инвестициите.
-							</p>
-							<div className="mt-6">
+					<motion.div className="rounded-2xl border border-border bg-paper p-8 lg:col-span-2 lg:p-10" variants={fadeUp}>
+						<div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+							<div>
+								<h3 className="font-serif text-2xl font-medium text-foreground">
+									Готови ли сте за предизвикателството?
+								</h3>
+								<p className="mt-3 leading-relaxed text-muted-foreground">
+									Присъединете се към инициативата &quot;Млад Инвеститор&quot; и започнете вашето пътуване
+									в света на финансите и инвестициите.
+								</p>
+							</div>
+							<div className="shrink-0">
 								<Button size="lg" className="gap-2 rounded-full px-8">
 									Запиши се
 									<ArrowRight className="size-4" />
 								</Button>
 							</div>
-						</motion.div>
-					</div>
+						</div>
+					</motion.div>
 				</motion.div>
 			</div>
 		</section>
