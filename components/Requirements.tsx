@@ -34,14 +34,14 @@ const fadeUp = {
 export function Requirements() {
 	return (
 		<section id="requirements" className="bg-foreground px-6 py-24 text-background lg:px-8 lg:py-32">
-			<motion.div
-				className="mx-auto max-w-7xl"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true, amount: 0.15 }}
-			>
-				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					className="grid gap-4 lg:grid-cols-2 lg:gap-20"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-background/60">
 							Изисквания за Доклада
@@ -55,9 +55,15 @@ export function Requirements() {
 							Спазвайте следните насоки при изготвянето на вашия инвестиционен доклад.
 						</p>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
+				<motion.div
+					className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div className="rounded-2xl border border-background/10 bg-background/5 p-8 lg:p-10" variants={fadeUp}>
 						<div className="flex items-center gap-4">
 							<div className="flex size-12 items-center justify-center rounded-full border border-background/20 bg-background/10">
@@ -99,9 +105,15 @@ export function Requirements() {
 							))}
 						</ul>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<motion.div className="mt-6 rounded-2xl border border-background/10 bg-background/5 p-8 lg:p-10" variants={fadeUp}>
+				<motion.div
+					className="mt-6 rounded-2xl border border-background/10 bg-background/5 p-8 lg:p-10"
+					variants={fadeUp}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 						<div className="flex items-center gap-4">
 							<div className="flex size-12 shrink-0 items-center justify-center rounded-full border border-background/20 bg-background/10">
@@ -120,7 +132,7 @@ export function Requirements() {
 						</a>
 					</div>
 				</motion.div>
-			</motion.div>
+			</div>
 		</section>
 	);
 }

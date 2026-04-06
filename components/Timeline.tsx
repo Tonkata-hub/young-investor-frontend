@@ -38,14 +38,14 @@ const fadeUp = {
 export function Timeline() {
 	return (
 		<section id="timeline" className="px-6 py-24 lg:px-8 lg:py-32">
-			<motion.div
-				className="mx-auto max-w-7xl"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true, amount: 0.15 }}
-			>
-				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					className="grid gap-4 lg:grid-cols-2 lg:gap-20"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Програма на Състезанието
@@ -59,9 +59,15 @@ export function Timeline() {
 							Ключови дати и етапи за състезанието Млад Инвеститор.
 						</p>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<div className="mt-16 grid gap-8 lg:mt-20 lg:grid-cols-3">
+				<motion.div
+					className="mt-16 grid gap-8 lg:mt-20 lg:grid-cols-3"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					{milestones.map((milestone, index) => (
 						<motion.div key={milestone.title} variants={fadeUp}>
 							<div className="flex items-center gap-4">
@@ -80,8 +86,8 @@ export function Timeline() {
 							</div>
 						</motion.div>
 					))}
-				</div>
-			</motion.div>
+				</motion.div>
+			</div>
 		</section>
 	);
 }

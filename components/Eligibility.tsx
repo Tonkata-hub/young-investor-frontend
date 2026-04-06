@@ -35,14 +35,14 @@ const fadeUp = {
 export function Eligibility() {
 	return (
 		<section id="eligibility" className="bg-secondary px-6 py-24 lg:px-8 lg:py-32">
-			<motion.div
-				className="mx-auto max-w-7xl"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true, amount: 0.15 }}
-			>
-				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					className="grid gap-4 lg:grid-cols-2 lg:gap-20"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Кой Може да Участва
@@ -57,9 +57,15 @@ export function Eligibility() {
 							към финансите и инвестициите.
 						</p>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
+				<motion.div
+					className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div className="rounded-2xl bg-paper p-8 lg:p-10" variants={fadeUp}>
 						<h3 className="font-serif text-2xl font-medium text-foreground">Изисквания за Ученици</h3>
 						<ul className="mt-8">
@@ -107,8 +113,8 @@ export function Eligibility() {
 							</div>
 						</motion.div>
 					</div>
-				</div>
-			</motion.div>
+				</motion.div>
+			</div>
 		</section>
 	);
 }

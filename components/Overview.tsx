@@ -41,14 +41,14 @@ const fadeUp = {
 export function Overview() {
 	return (
 		<section id="overview" className="px-6 py-24 lg:px-8 lg:py-32">
-			<motion.div
-				className="mx-auto max-w-7xl"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true, amount: 0.15 }}
-			>
-				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					className="grid gap-12 lg:grid-cols-2 lg:gap-24"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div className="flex flex-col justify-center" variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							За Състезанието
@@ -69,9 +69,15 @@ export function Overview() {
 							икономиката.
 						</p>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<div className="mt-20 grid gap-12 lg:mt-24 lg:grid-cols-3 lg:gap-8">
+				<motion.div
+					className="mt-20 grid gap-12 lg:mt-24 lg:grid-cols-3 lg:gap-8"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					{skills.map((skill) => (
 						<motion.div key={skill.title} variants={fadeUp}>
 							<div className="h-px w-full bg-border" />
@@ -84,11 +90,14 @@ export function Overview() {
 							</div>
 						</motion.div>
 					))}
-				</div>
+				</motion.div>
 
 				<motion.div
 					className="mt-12 lg:mt-16 rounded-2xl border border-border bg-paper p-8 lg:p-12"
 					variants={fadeUp}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
 				>
 					<div className="flex items-center gap-4">
 						<div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary">
@@ -105,7 +114,7 @@ export function Overview() {
 						създавайки цялостен инвестиционен план.
 					</p>
 				</motion.div>
-			</motion.div>
+			</div>
 		</section>
 	);
 }

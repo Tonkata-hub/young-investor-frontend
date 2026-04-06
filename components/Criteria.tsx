@@ -47,14 +47,14 @@ const fadeUp = {
 export function Criteria() {
 	return (
 		<section id="criteria" className="px-6 py-24 lg:px-8 lg:py-32">
-			<motion.div
-				className="mx-auto max-w-7xl"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true, amount: 0.15 }}
-			>
-				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					className="grid gap-4 lg:grid-cols-2 lg:gap-20"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Критерии за Оценяване
@@ -69,9 +69,15 @@ export function Criteria() {
 							критерии.
 						</p>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<div className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2">
+				<motion.div
+					className="mt-16 grid gap-6 lg:mt-20 lg:grid-cols-2"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					{criteria.map((item) => (
 						<motion.div key={item.title} className="rounded-2xl border border-border bg-paper p-8 lg:p-10" variants={fadeUp}>
 							<div className="flex items-center gap-4">
@@ -87,8 +93,8 @@ export function Criteria() {
 							</div>
 						</motion.div>
 					))}
-				</div>
-			</motion.div>
+				</motion.div>
+			</div>
 		</section>
 	);
 }

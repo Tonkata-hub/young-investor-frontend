@@ -43,14 +43,14 @@ const fadeUp = {
 export function Highlight() {
 	return (
 		<section id="highlight" className="bg-secondary px-6 py-24 lg:px-8 lg:py-32">
-			<motion.div
-				className="mx-auto max-w-7xl"
-				variants={container}
-				initial="hidden"
-				whileInView="show"
-				viewport={{ once: true, amount: 0.15 }}
-			>
-				<div className="grid gap-4 lg:grid-cols-2 lg:gap-20">
+			<div className="mx-auto max-w-7xl">
+				<motion.div
+					className="grid gap-4 lg:grid-cols-2 lg:gap-20"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					<motion.div variants={fadeUp} transition={{ duration: 0.55, ease: "easeOut", delay: 0 }}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 							Награден Фонд
@@ -65,9 +65,15 @@ export function Highlight() {
 							изключително представяне и иновативни инвестиционни стратегии.
 						</p>
 					</motion.div>
-				</div>
+				</motion.div>
 
-				<div className="mt-16 grid items-end gap-4 md:grid-cols-3 lg:mt-20 lg:gap-6">
+				<motion.div
+					className="mt-16 grid items-end gap-4 md:grid-cols-3 lg:mt-20 lg:gap-6"
+					variants={container}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true, margin: "-50px" }}
+				>
 					{awards.map((award) => (
 						<motion.div
 							key={award.placement}
@@ -112,8 +118,8 @@ export function Highlight() {
 							</p>
 						</motion.div>
 					))}
-				</div>
-			</motion.div>
+				</motion.div>
+			</div>
 		</section>
 	);
 }
