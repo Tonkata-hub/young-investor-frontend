@@ -48,7 +48,7 @@ export function Timeline() {
 				>
 					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-							Програма на Състезанието
+							Важни Дати
 						</p>
 						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
 							Програма на Състезанието

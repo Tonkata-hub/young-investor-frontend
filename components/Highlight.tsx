@@ -52,10 +52,7 @@ export function Highlight() {
 					viewport={{ once: true, margin: "-50px" }}
 				>
 					<motion.div variants={fadeUp} transition={{ duration: 0.55, ease: "easeOut", delay: 0 }}>
-						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-							Награден Фонд
-						</p>
-						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
+						<h2 className="font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
 							Награден Фонд
 						</h2>
 					</motion.div>

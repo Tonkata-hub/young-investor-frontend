@@ -51,12 +51,10 @@ export function Overview() {
 				>
 					<motion.div className="flex flex-col justify-center" variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-							За Състезанието
+							Общ преглед
 						</p>
 						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
-							За
-							<br />
-							Състезанието
+							За Състезанието
 						</h2>
 					</motion.div>
 					<motion.div className="flex flex-col justify-center" variants={fadeUp}>

@@ -52,7 +52,7 @@ export function Team() {
 				>
 					<motion.div variants={fadeUp}>
 						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-							Организатори
+							Екип
 						</p>
 						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
 							Организатори

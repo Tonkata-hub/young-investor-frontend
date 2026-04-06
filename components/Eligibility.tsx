@@ -44,11 +44,8 @@ export function Eligibility() {
 					viewport={{ once: true, margin: "-50px" }}
 				>
 					<motion.div variants={fadeUp}>
-						<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
-							Кой Може да Участва
-						</p>
-						<h2 className="mt-4 font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
-							Кой Може да Участва
+						<h2 className="font-serif text-4xl font-medium tracking-tight text-foreground lg:text-5xl">
+							Кой Може да Участва?
 						</h2>
 					</motion.div>
 					<motion.div className="flex items-end" variants={fadeUp}>

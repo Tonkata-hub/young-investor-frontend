@@ -6,7 +6,6 @@ import { Highlight } from "@/components/Highlight";
 import { Timeline } from "@/components/Timeline";
 import { Eligibility } from "@/components/Eligibility";
 import { Criteria } from "@/components/Criteria";
-import { Requirements } from "@/components/Requirements";
 import { Team } from "@/components/Team";
 import { Footer } from "@/components/Footer";
 
@@ -25,7 +24,6 @@ export default function Home() {
 				<Timeline />
 				<Eligibility />
 				<Criteria />
-				<Requirements />
 				<Team />
 			</main>
 			<Footer />
