@@ -7,7 +7,7 @@ const awards = [
 	{
 		placement: "II-ро място",
 		label: "Второ място",
-		amount: "2 000 лева",
+		amount: "2 000 €",
 		winner: false,
 		icon: Medal,
 		animationOrder: 1,
@@ -15,7 +15,7 @@ const awards = [
 	{
 		placement: "I-во място",
 		label: "Победител",
-		amount: "3 000 лева",
+		amount: "3 000 €",
 		winner: true,
 		icon: Trophy,
 		animationOrder: 0,
@@ -23,7 +23,7 @@ const awards = [
 	{
 		placement: "III-то място",
 		label: "Трето място",
-		amount: "1 000 лева",
+		amount: "1 000 €",
 		winner: false,
 		icon: Award,
 		animationOrder: 2,

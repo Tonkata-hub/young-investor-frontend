@@ -1,7 +1,7 @@
 "use client";
 
-import { AtSign } from "lucide-react";
 import { motion } from "framer-motion";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 
 const organizers = [
 	{
@@ -9,7 +9,7 @@ const organizers = [
 		initials: "КФ",
 		description:
 			"Клубът по финанси представлява група от ученици от Софийската математическа гимназия, които учат икономика и финанси чрез интерактивни срещи и семинари. Освен това те инвестират и търгуват с реални пари на финансовите пазари, ръководени от експерти в индустрията.",
-		social: { label: "@finance_club_smg", href: "https://instagram.com/finance_club_smg", icon: AtSign },
+		social: { label: "@finance_club_smg", href: "https://instagram.com/finance_club_smg", icon: InstagramIcon },
 	},
 	{
 		name: "Д-р Боян Иванчев",
@@ -21,8 +21,8 @@ const organizers = [
 ];
 
 const sponsors = [
-	{ name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
-	{ name: "Concord Asset Management", role: "Спонсор" },
+	// { name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
+	// { name: "Concord Asset Management", role: "Спонсор" },
 ];
 
 const container = {
@@ -95,6 +95,7 @@ export function Team() {
 					))}
 				</motion.div>
 
+				{/*
 				<motion.div
 					className="mt-6 border-t border-border pt-10"
 					variants={fadeUp}
@@ -117,6 +118,7 @@ export function Team() {
 						))}
 					</div>
 				</motion.div>
+				*/}
 			</div>
 		</section>
 	);

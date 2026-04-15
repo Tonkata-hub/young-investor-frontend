@@ -128,7 +128,7 @@ export function Criteria() {
 				>
 					<motion.div className="rounded-2xl border border-background/10 bg-background/5 p-8 lg:p-10" variants={fadeUp}>
 						<div className="flex items-center gap-4">
-							<div className="flex size-12 items-center justify-center rounded-full border border-background/20 bg-background/10">
+							<div className="flex size-12 shrink-0 items-center justify-center rounded-full border border-background/20 bg-background/10">
 								<AlignLeft className="size-5 text-background" />
 							</div>
 							<h3 className="font-serif text-2xl font-medium text-background">Насоки за Формата</h3>
@@ -148,7 +148,7 @@ export function Criteria() {
 
 					<motion.div className="rounded-2xl border border-background/10 bg-background/5 p-8 lg:p-10" variants={fadeUp}>
 						<div className="flex items-center gap-4">
-							<div className="flex size-12 items-center justify-center rounded-full border border-background/20 bg-background/10">
+							<div className="flex size-12 shrink-0 items-center justify-center rounded-full border border-background/20 bg-background/10">
 								<FileText className="size-5 text-background" />
 							</div>
 							<h3 className="font-serif text-2xl font-medium text-background">

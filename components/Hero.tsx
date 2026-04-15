@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 const partners = [
 	{ name: "Клуб по Финанси СМГ", role: null },
-	{ name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
-	{ name: "Concord", role: "Спонсор" },
+	// { name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
+	// { name: "Concord", role: "Спонсор" },
 ];
 
 const fadeUp = {
@@ -27,7 +27,7 @@ export function Hero() {
 					transition={{ duration: 0.5, ease: "easeOut" }}
 				>
 					<div className="inline-flex items-center gap-2 rounded-full bg-[#ebe4da] px-4 py-2 text-sm text-muted-foreground">
-						<span className="size-2 rounded-full bg-emerald-500" />
+						<span className="size-2 rounded-full bg-foreground/70" />
 						Училищно Състезание
 					</div>
 				</motion.div>
@@ -46,7 +46,11 @@ export function Hero() {
 						},
 					}}
 				>
-					<motion.span variants={fadeUp} transition={{ duration: 0.55, ease: "easeOut" }} className="inline-block text-foreground">
+					<motion.span
+						variants={fadeUp}
+						transition={{ duration: 0.55, ease: "easeOut" }}
+						className="inline-block text-foreground"
+					>
 						Млад
 					</motion.span>{" "}
 					<motion.span
@@ -101,9 +105,13 @@ export function Hero() {
 					transition={{ duration: 0.55, ease: "easeOut", delay: 0.45 }}
 				>
 					<p className="text-center text-xs font-medium uppercase tracking-wider text-muted-foreground">
-						Партньори
+						{partners.length === 1 ? "Партньор" : "Партньори"}
 					</p>
-					<div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8 lg:gap-12">
+					<div
+						className={`mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-10 sm:gap-8 lg:gap-12 ${
+							partners.length === 1 ? "place-items-center sm:grid-cols-1" : "sm:grid-cols-3"
+						}`}
+					>
 						{partners.map((partner, i) => (
 							<motion.div
 								key={partner.name}

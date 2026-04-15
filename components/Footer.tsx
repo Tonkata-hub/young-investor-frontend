@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { AtSign, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/InstagramIcon";
 
 const links = [
   { label: "За Нас", href: "#overview" },
@@ -42,7 +43,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex size-10 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-border"
             >
-              <AtSign className="size-4" />
+              <InstagramIcon className="size-4" />
             </a>
             <a
               href="mailto:mlad.investitor@gmail.com"
