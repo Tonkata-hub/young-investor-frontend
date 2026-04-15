@@ -56,7 +56,11 @@ export function Highlight() {
 							Награден Фонд
 						</h2>
 					</motion.div>
-					<motion.div className="flex items-end" variants={fadeUp} transition={{ duration: 0.55, ease: "easeOut", delay: 0.12 }}>
+					<motion.div
+						className="flex items-end"
+						variants={fadeUp}
+						transition={{ duration: 0.55, ease: "easeOut", delay: 0.12 }}
+					>
 						<p className="text-lg leading-relaxed text-muted-foreground">
 							Най-добрите отбори ще бъдат наградени с парични награди, които отличават тяхното
 							изключително представяне и иновативни инвестиционни стратегии.
