@@ -15,6 +15,7 @@ const navLinks = [
 	{ href: "/#organizers", label: "Организатори" },
 	{ href: "/#requirements", label: "Задача" },
 ];
+const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 
 export function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -112,7 +113,10 @@ export function Navbar() {
 					</div>
 
 					<div className="hidden shrink-0 md:block">
-						<Button className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-4 text-sm hover:bg-[lab(9.53159%_.968002_3.74648)]/90 lg:px-6">
+						<Button
+							className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-4 text-sm hover:bg-[lab(9.53159%_.968002_3.74648)]/90 lg:px-6"
+							onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+						>
 							Запиши се
 							<ArrowRight className="size-4" />
 						</Button>
@@ -178,7 +182,10 @@ export function Navbar() {
 								</Link>
 							))}
 							<div className="pt-6">
-								<Button className="w-full gap-2 rounded-full">
+								<Button
+									className="w-full gap-2 rounded-full"
+									onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+								>
 									Запиши се
 									<ArrowRight className="size-4" />
 								</Button>

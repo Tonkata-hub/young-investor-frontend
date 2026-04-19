@@ -9,6 +9,7 @@ const partners = [
 	// { name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
 	// { name: "Concord", role: "Спонсор" },
 ];
+const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -84,6 +85,7 @@ export function Hero() {
 					<Button
 						size="lg"
 						className="w-full gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-8 hover:bg-[lab(9.53159%_.968002_3.74648)]/90 sm:w-auto"
+						onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
 					>
 						Запиши се
 						<ArrowRight className="size-4" />

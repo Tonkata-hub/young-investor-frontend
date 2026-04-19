@@ -31,6 +31,7 @@ const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
 	show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
 };
+const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 
 export function Eligibility() {
 	return (
@@ -105,7 +106,11 @@ export function Eligibility() {
 								</p>
 							</div>
 							<div className="shrink-0">
-								<Button size="lg" className="gap-2 rounded-full px-8">
+								<Button
+									size="lg"
+									className="gap-2 rounded-full px-8"
+									onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+								>
 									Запиши се
 									<ArrowRight className="size-4" />
 								</Button>
