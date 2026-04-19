@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 
 const organizers = [
 	{
 		name: "Клуб по Финанси СМГ",
 		initials: "КФ",
+		logoSrc: "/images/finance-club.png",
 		description:
 			"Клубът по финанси представлява група от ученици от Софийската математическа гимназия, които учат икономика и финанси чрез интерактивни срещи и семинари. Освен това те инвестират и търгуват с реални пари на финансовите пазари, ръководени от експерти в индустрията.",
 		social: { label: "@finance_club_smg", href: "https://instagram.com/finance_club_smg", icon: InstagramIcon },
@@ -75,9 +77,21 @@ export function Team() {
 				>
 					{organizers.map((person) => (
 						<motion.div key={person.name} className="rounded-2xl border border-border bg-paper p-8 lg:p-10" variants={fadeUp}>
-							<div className="flex size-16 items-center justify-center rounded-full bg-secondary font-serif text-lg font-medium text-foreground">
-								{person.initials}
-							</div>
+							{person.logoSrc ? (
+								<div className="flex size-16 items-center justify-center overflow-hidden rounded-full bg-secondary">
+									<Image
+										src={person.logoSrc}
+										alt={person.name}
+										width={64}
+										height={64}
+										className="size-full object-cover"
+									/>
+								</div>
+							) : (
+								<div className="flex size-16 items-center justify-center rounded-full bg-secondary font-serif text-lg font-medium text-foreground">
+									{person.initials}
+								</div>
+							)}
 							<h3 className="mt-6 text-xl font-medium text-foreground">{person.name}</h3>
 							<p className="mt-3 leading-relaxed text-muted-foreground">{person.description}</p>
 							{person.social && (

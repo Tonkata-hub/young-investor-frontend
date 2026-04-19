@@ -187,10 +187,10 @@ export function Criteria() {
 							</div>
 						</div>
 						<a
-							href="mailto:mlad.investitor@gmail.com"
+							href="mailto:mlad.investitor@outlook.com"
 							className="text-lg font-medium text-background underline underline-offset-4 hover:no-underline lg:text-xl"
 						>
-							mlad.investitor@gmail.com
+							mlad.investitor@outlook.com
 						</a>
 					</div>
 				</motion.div>

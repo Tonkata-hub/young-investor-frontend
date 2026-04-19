@@ -13,7 +13,6 @@ const navLinks = [
 	{ href: "/#eligibility", label: "Участие" },
 	{ href: "/#criteria", label: "Критерии" },
 	{ href: "/#organizers", label: "Организатори" },
-	{ href: "/#requirements", label: "Задача" },
 ];
 const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 

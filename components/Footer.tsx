@@ -46,7 +46,7 @@ export function Footer() {
               <InstagramIcon className="size-4" />
             </a>
             <a
-              href="mailto:mlad.investitor@gmail.com"
+              href="mailto:mlad.investitor@outlook.com"
               className="flex size-10 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-border"
             >
               <Mail className="size-4" />

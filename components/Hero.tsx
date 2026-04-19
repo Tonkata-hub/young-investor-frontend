@@ -3,9 +3,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const partners = [
-	{ name: "Клуб по Финанси СМГ", role: null },
+	{
+		name: "Клуб по Финанси СМГ",
+		role: null,
+		logoSrc: "/images/finance-club.png",
+		href: "https://instagram.com/finance_club_smg",
+	},
 	// { name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
 	// { name: "Concord", role: "Спонсор" },
 ];
@@ -117,19 +123,41 @@ export function Hero() {
 						{partners.map((partner, i) => (
 							<motion.div
 								key={partner.name}
-								className="group flex flex-col items-center gap-3 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+								className="flex flex-col items-center gap-3"
 								initial="hidden"
 								animate="show"
 								variants={fadeUp}
 								transition={{ duration: 0.55, ease: "easeOut", delay: 0.55 + i * 0.1 }}
 							>
-								<div className="h-10 w-28 rounded-lg bg-secondary" />
-								<div className="text-center">
-									<p className="text-sm font-medium text-foreground">{partner.name}</p>
-									{partner.role && (
-										<p className="mt-0.5 text-xs text-muted-foreground">{partner.role}</p>
-									)}
-								</div>
+								<a
+									href={partner.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="group inline-flex flex-col items-center gap-3"
+									aria-label={`Instagram на ${partner.name}`}
+								>
+									<div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-1.5 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-sm">
+										{partner.logoSrc ? (
+											<Image
+												src={partner.logoSrc}
+												alt={partner.name}
+												width={80}
+												height={80}
+												className="h-full w-full scale-125 object-cover object-center transition-transform duration-200 group-hover:scale-[1.3]"
+											/>
+										) : null}
+									</div>
+									<div className="text-center">
+										<p className="text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-foreground/80">
+											{partner.name}
+										</p>
+										{partner.role && (
+											<p className="mt-0.5 text-xs text-muted-foreground transition-colors duration-200 group-hover:text-muted-foreground/80">
+												{partner.role}
+											</p>
+										)}
+									</div>
+								</a>
 							</motion.div>
 						))}
 					</div>
