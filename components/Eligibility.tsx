@@ -5,11 +5,13 @@ import { Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const studentRequirements = [
+	"Не се позволява използването на изкуствен интелект за решаването на задачите.",
 	"В момента учащи в 9–12 клас",
 	"Посещаващи всяко училище в България",
 	"Интерес към финанси и инвестиции",
 	"Не се изискват предварителни финансови познания",
 ];
+const aiRestrictionRule = "Не се позволява използването на изкуствен интелект за решаването на задачите.";
 
 const teamFormation = [
 	"Отбори от 1–5 ученици",
@@ -64,16 +66,22 @@ export function Eligibility() {
 					whileInView="show"
 					viewport={{ once: true, margin: "-50px" }}
 				>
-					<motion.div className="rounded-2xl bg-paper p-8 lg:p-10" variants={fadeUp}>
+					<motion.div className="rounded-2xl bg-paper px-8 pt-8 pb-6 lg:px-10 lg:pt-10 lg:pb-8" variants={fadeUp}>
 						<h3 className="font-serif text-2xl font-medium text-foreground">Изисквания за Ученици</h3>
 						<ul className="mt-8">
 							{studentRequirements.map((item) => (
 								<li
 									key={item}
-									className="flex items-start gap-4 border-t border-border py-4 first:border-0 first:pt-0"
+									className="flex items-start gap-4 border-t border-border py-4 first:border-0 first:pt-0 last:pb-2"
 								>
 									<Check className="mt-0.5 size-5 shrink-0 text-foreground" />
-									<span className="text-muted-foreground">{item}</span>
+									<span className="text-muted-foreground">
+										{item === aiRestrictionRule ? (
+											<strong>{item}</strong>
+										) : (
+											item
+										)}
+									</span>
 								</li>
 							))}
 						</ul>
