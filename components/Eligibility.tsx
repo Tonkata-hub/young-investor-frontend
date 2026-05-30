@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { showRegistrationClosedMessage } from "@/lib/registration";
 
 const studentRequirements = [
 	"Не се позволява използването на изкуствен интелект за решаването на задачите.",
@@ -33,7 +34,6 @@ const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
 	show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
 };
-const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 
 export function Eligibility() {
 	return (
@@ -117,7 +117,7 @@ export function Eligibility() {
 								<Button
 									size="lg"
 									className="gap-2 rounded-full px-8"
-									onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+									onClick={showRegistrationClosedMessage}
 								>
 									Запиши се
 									<ArrowRight className="size-4" />

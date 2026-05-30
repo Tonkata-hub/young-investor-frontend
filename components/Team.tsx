@@ -24,7 +24,11 @@ const organizers = [
 
 const sponsors = [
 	// { name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
-	// { name: "Concord Asset Management", role: "Спонсор" },
+	{
+		name: "Concord Asset Management",
+		role: "Спонсор",
+		logoSrc: "/images/concord-logo.svg",
+	},
 ];
 
 const container = {
@@ -109,9 +113,8 @@ export function Team() {
 					))}
 				</motion.div>
 
-				{/*
 				<motion.div
-					className="mt-6 border-t border-border pt-10"
+					className="mt-10 border-t border-border pt-12 text-center"
 					variants={fadeUp}
 					initial="hidden"
 					whileInView="show"
@@ -120,19 +123,29 @@ export function Team() {
 					<p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
 						С Подкрепата На
 					</p>
-					<div className="mt-8 grid divide-y divide-border overflow-hidden rounded-2xl border border-border bg-paper md:grid-cols-2 md:divide-x md:divide-y-0">
+					<div className="mt-8 flex flex-wrap justify-center gap-6">
 						{sponsors.map((sponsor) => (
-							<div key={sponsor.name} className="flex flex-col items-center gap-4 p-8 lg:p-10">
-								<div className="h-12 w-36 rounded-lg bg-secondary" />
+							<div
+								key={sponsor.name}
+								className="flex w-full max-w-sm flex-col items-center rounded-2xl border border-border bg-paper px-8 py-8 sm:w-auto sm:min-w-96"
+							>
+								<div className="flex h-20 w-64 items-center justify-center rounded-xl bg-white px-5">
+									<Image
+										src={sponsor.logoSrc}
+										alt={sponsor.name}
+										width={256}
+										height={80}
+										className="h-full w-full object-contain"
+									/>
+								</div>
 								<div className="text-center">
-									<p className="text-sm font-medium text-foreground">{sponsor.name}</p>
+									<p className="mt-6 text-base font-medium text-foreground">{sponsor.name}</p>
 									<p className="mt-1 text-xs text-muted-foreground">{sponsor.role}</p>
 								</div>
 							</div>
 						))}
 					</div>
 				</motion.div>
-				*/}
 			</div>
 		</section>
 	);

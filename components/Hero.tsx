@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { showRegistrationClosedMessage } from "@/lib/registration";
 
 const partners = [
 	{
@@ -13,9 +15,12 @@ const partners = [
 		href: "https://instagram.com/finance_club_smg",
 	},
 	// { name: "Bloomberg TV Bulgaria", role: "Медиен партньор" },
-	// { name: "Concord", role: "Спонсор" },
+	{
+		name: "Concord",
+		role: "Спонсор",
+		logoSrc: "/images/concord-logo.svg",
+	},
 ];
-const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 
 const fadeUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -91,18 +96,18 @@ export function Hero() {
 					<Button
 						size="lg"
 						className="w-full gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-8 hover:bg-[lab(9.53159%_.968002_3.74648)]/90 sm:w-auto"
-						onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+						onClick={showRegistrationClosedMessage}
 					>
 						Запиши се
 						<ArrowRight className="size-4" />
 					</Button>
-					<a
+					<Link
 						href="/#overview"
 						className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-[lab(97.6889%_.426859_1.84673)] px-8 text-base font-medium text-foreground shadow-xs transition-colors hover:bg-[lab(94.5%_.426859_1.84673)] sm:w-auto"
 					>
 						Научи повече
 						<ChevronDown className="size-4" />
-					</a>
+					</Link>
 				</motion.div>
 
 				<motion.div
@@ -115,27 +120,10 @@ export function Hero() {
 					<p className="text-center text-xs font-medium uppercase tracking-wider text-muted-foreground">
 						{partners.length === 1 ? "Партньор" : "Партньори"}
 					</p>
-					<div
-						className={`mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-10 sm:gap-8 lg:gap-12 ${
-							partners.length === 1 ? "place-items-center sm:grid-cols-1" : "sm:grid-cols-3"
-						}`}
-					>
-						{partners.map((partner, i) => (
-							<motion.div
-								key={partner.name}
-								className="flex flex-col items-center gap-3"
-								initial="hidden"
-								animate="show"
-								variants={fadeUp}
-								transition={{ duration: 0.55, ease: "easeOut", delay: 0.55 + i * 0.1 }}
-							>
-								<a
-									href={partner.href}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="group inline-flex flex-col items-center gap-3"
-									aria-label={`Instagram на ${partner.name}`}
-								>
+					<div className="mx-auto mt-8 flex max-w-2xl flex-col items-center justify-center gap-10 sm:flex-row sm:gap-24 lg:gap-28">
+						{partners.map((partner, i) => {
+							const partnerContent = (
+								<>
 									<div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-1.5 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-sm">
 										{partner.logoSrc ? (
 											<Image
@@ -143,9 +131,17 @@ export function Hero() {
 												alt={partner.name}
 												width={80}
 												height={80}
-												className="h-full w-full scale-125 object-cover object-center transition-transform duration-200 group-hover:scale-[1.3]"
+												className={`h-full w-full object-center transition-transform duration-200 ${
+													partner.name === "Concord"
+														? "object-contain p-1 group-hover:scale-105"
+														: "scale-125 object-cover group-hover:scale-[1.3]"
+												}`}
 											/>
-										) : null}
+										) : (
+											<span className="text-center text-sm font-medium text-foreground">
+												{partner.name}
+											</span>
+										)}
 									</div>
 									<div className="text-center">
 										<p className="text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-foreground/80">
@@ -157,9 +153,36 @@ export function Hero() {
 											</p>
 										)}
 									</div>
-								</a>
-							</motion.div>
-						))}
+								</>
+							);
+
+							return (
+								<motion.div
+									key={partner.name}
+									className="flex flex-col items-center gap-3"
+									initial="hidden"
+									animate="show"
+									variants={fadeUp}
+									transition={{ duration: 0.55, ease: "easeOut", delay: 0.55 + i * 0.1 }}
+								>
+									{partner.href ? (
+										<a
+											href={partner.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="group inline-flex flex-col items-center gap-3"
+											aria-label={`Instagram на ${partner.name}`}
+										>
+											{partnerContent}
+										</a>
+									) : (
+										<div className="group inline-flex flex-col items-center gap-3">
+											{partnerContent}
+										</div>
+									)}
+								</motion.div>
+							);
+						})}
 					</div>
 				</motion.div>
 			</div>

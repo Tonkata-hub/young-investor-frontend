@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { showRegistrationClosedMessage } from "@/lib/registration";
 
 const navLinks = [
 	{ href: "/#overview", label: "За Нас" },
@@ -14,7 +15,6 @@ const navLinks = [
 	{ href: "/#criteria", label: "Критерии" },
 	{ href: "/#organizers", label: "Организатори" },
 ];
-const registrationUrl = "https://forms.gle/c5LTFqtCQPU4otUU7";
 
 export function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -114,7 +114,7 @@ export function Navbar() {
 					<div className="hidden shrink-0 md:block">
 						<Button
 							className="gap-2 rounded-full bg-[lab(9.53159%_.968002_3.74648)] px-4 text-sm hover:bg-[lab(9.53159%_.968002_3.74648)]/90 lg:px-6"
-							onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+							onClick={showRegistrationClosedMessage}
 						>
 							Запиши се
 							<ArrowRight className="size-4" />
@@ -183,7 +183,7 @@ export function Navbar() {
 							<div className="pt-6">
 								<Button
 									className="w-full gap-2 rounded-full"
-									onClick={() => window.open(registrationUrl, "_blank", "noopener,noreferrer")}
+									onClick={showRegistrationClosedMessage}
 								>
 									Запиши се
 									<ArrowRight className="size-4" />
